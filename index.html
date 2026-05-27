@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Закрывающий тег</title>
+    <link rel="icon" href="./svg/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./fonts/fonts.css" />
     <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/globals.css" />
@@ -11,8 +12,400 @@
     <link rel="stylesheet" href="./styles/animations.css" />
   </head>
   <body class="page">
-    <header class="header"></header>
-    <main></main>
-    <script src="./scripts/like.js"></script>
-  </body>
+
+    <!-- SVG symbols -->
+    <svg class="svg-symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <symbol id="icon-floppy" viewBox="0 0 28 28" fill="none">
+        <path d="M2 2h20l4 4v20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h16zm0 0v6h16V2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="8" y="2" width="2" height="6" fill="currentColor"/>
+        <rect x="6" y="16" width="16" height="10" rx="1" stroke="currentColor" stroke-width="2"/>
+        <rect x="10" y="18" width="8" height="6" rx="0.5" fill="currentColor"/>
+      </symbol>
+    </svg>
+
+    <header class="header">
+      <a class="header__logo">&lt;/&gt;</a>
+      <h1 class="header__title">Закрывающий тег</h1>
+      <nav class="theme-menu" aria-label="Переключение темы">
+        <ul class="theme-menu__list">
+          <li class="theme-menu__item">
+            <button class="theme-menu__button" type="button" aria-pressed="true" disabled>Light</button>
+          </li>
+          <li class="theme-menu__item">
+            <button class="theme-menu__button" type="button" aria-pressed="false">Dark</button>
+          </li>
+          <li class="theme-menu__item">
+            <button class="theme-menu__button" type="button" aria-pressed="false">Auto</button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="cards" aria-label="Карточки">
+
+        <!-- Card 1 -->
+        <article class="card">
+          <h2 class="card__title">Начало пути: HTML и первый тег</h2>
+          <div class="card__image-wrapper">
+            <span class="card__label">HTML</span>
+            <img
+              class="card__image card__image--filter-1"
+              src="./images/image1.svg"
+              alt="Первая карточка — HTML"
+            />
+          </div>
+          <div class="card__content">
+            <p class="card__text">
+              Помню первый день курса. Открыл редактор, написал &lt;h1&gt; и увидел заголовок в браузере — это было настоящее волшебство. Казалось бы, всего один тег, а сколько эмоций.
+            </p>
+            <p class="card__text">
+              Именно тогда я понял: веб — это живое, и каждый элемент имеет смысл.
+            </p>
+            <div class="card__buttons">
+              <button class="card__icon-button" type="button" aria-label="Лайк">
+                <svg class="like-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none">
+                  <g class="sparks">
+                    <path d="M18 4l1 -3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M26 7l2 -2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M30 16l3 -1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M10 7l-2 -2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M6 16l-3 -1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </g>
+                  <g class="heart">
+                    <path class="core" d="M18 35l-1.5-1.4C7.2 25 2 20.3 2 14.5 2 9.4 6 5.5 11 5.5c2.8 0 5.5 1.3 7 3.4C19.5 6.8 22.2 5.5 25 5.5c5 0 9 3.9 9 9 0 5.8-5.2 10.5-14.5 19.1L18 35z"/>
+                    <path class="main-body" d="M18 35l-1.5-1.4C7.2 25 2 20.3 2 14.5 2 9.4 6 5.5 11 5.5c2.8 0 5.5 1.3 7 3.4C19.5 6.8 22.2 5.5 25 5.5c5 0 9 3.9 9 9 0 5.8-5.2 10.5-14.5 19.1L18 35z"/>
+                    <path class="contour" fill-rule="evenodd" d="M18 35l-1.5-1.4C7.2 25 2 20.3 2 14.5 2 9.4 6 5.5 11 5.5c2.8 0 5.5 1.3 7 3.4C19.5 6.8 22.2 5.5 25 5.5c5 0 9 3.9 9 9 0 5.8-5.2 10.5-14.5 19.1L18 35zM18 10.9C16.5 8.4 13.9 7 11 7 6.9 7 4 9.9 4 14.5c0 5 4.9 9.4 13.5 17.6L18 33l.5-.9C27.1 23.9 32 19.5 32 14.5 32 9.9 29.1 7 25 7c-2.9 0-5.5 1.4-7 3.9z"/>
+                  </g>
+                </svg>
+              </button>
+              <button class="button card__like-button" type="button" aria-label="Нравится">
+                <span class="button__text">Like</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card">
+          <h2 class="card__title">CSS: когда дизайн оживает</h2>
+          <div class="card__image-wrapper">
+            <span class="card__label">CSS</span>
+            <img
+              class="card__image card__image--filter-2"
+              src="./images/image2.svg"
+              alt="Вторая карточка — CSS"
+            />
+          </div>
+          <div class="card__content">
+            <p class="card__text">
+              Первый раз применил цвет через CSS — и страница заиграла красками. Flex, Grid, анимации — за каждым свойством скрывается целый мир.
+            </p>
+            <p class="card__text">
+              CSS кажется простым, пока не начинаешь центрировать div.
+            </p>
+            <div class="card__buttons">
+              <button class="card__icon-button" type="button" aria-label="Лайк">
+                <svg class="like-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none">
+                  <g class="sparks">
+                    <path d="M18 4l1 -3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M26 7l2 -2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M30 16l3 -1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M10 7l-2 -2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M6 16l-3 -1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </g>
+                  <g class="heart">
+                    <path class="core" d="M18 35l-1.5-1.4C7.2 25 2 20.3 2 14.5 2 9.4 6 5.5 11 5.5c2.8 0 5.5 1.3 7 3.4C19.5 6.8 22.2 5.5 25 5.5c5 0 9 3.9 9 9 0 5.8-5.2 10.5-14.5 19.1L18 35z"/>
+                    <path class="main-body" d="M18 35l-1.5-1.4C7.2 25 2 20.3 2 14.5 2 9.4 6 5.5 11 5.5c2.8 0 5.5 1.3 7 3.4C19.5 6.8 22.2 5.5 25 5.5c5 0 9 3.9 9 9 0 5.8-5.2 10.5-14.5 19.1L18 35z"/>
+                    <path class="contour" fill-rule="evenodd" d="M18 35l-1.5-1.4C7.2 25 2 20.3 2 14.5 2 9.4 6 5.5 11 5.5c2.8 0 5.5 1.3 7 3.4C19.5 6.8 22.2 5.5 25 5.5c5 0 9 3.9 9 9 0 5.8-5.2 10.5-14.5 19.1L18 35zM18 10.9C16.5 8.4 13.9 7 11 7 6.9 7 4 9.9 4 14.5c0 5 4.9 9.4 13.5 17.6L18 33l.5-.9C27.1 23.9 32 19.5 32 14.5 32 9.9 29.1 7 25 7c-2.9 0-5.5 1.4-7 3.9z"/>
+                  </g>
+                </svg>
+              </button>
+              <button class="button card__like-button" type="button" aria-label="Нравится">
+                <span class="button__text">Like</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card">
+          <h2 class="card__title">JavaScript: логика и жизнь</h2>
+          <div class="card__image-wrapper">
+            <span class="card__label">JS</span>
+            <img
+              class="card__image card__image--filter-3"
+              src="./images/image3.svg"
+              alt="Третья карточка — JavaScript"
+            />
+          </div>
+          <div class="card__content">
+            <p class="card__text">
+              JavaScript открыл дверь в интерактивность. Переменные, функции, события — всё встало на своё место после первого рабочего счётчика.
+            </p>
+            <p class="card__text">
+              Когда кнопка реально что-то делает — это уже не вёрстка, это приложение.
+            </p>
+            <div class="card__buttons">
+              <button class="card__icon-button" type="button" aria-label="Лайк">
+                <svg class="like-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none">
+                  <g class="sparks">
+                    <path d="M18 4l1 -3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M26 7l2 -2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M30 16l3 -1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M10 7l-2 -2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M6 16l-3 -1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </g>
+                  <g class="heart">
+                    <path class="core" d="M18 35l-1.5-1.4C7.2 25 2 20.3 2 14.5 2 9.4 6 5.5 11 5.5c2.8 0 5.5 1.3 7 3.4C19.5 6.8 22.2 5.5 25 5.5c5 0 9 3.9 9 9 0 5.8-5.2 10.5-14.5 19.1L18 35z"/>
+                    <path class="main-body" d="M18 35l-1.5-1.4C7.2 25 2 20.3 2 14.5 2 9.4 6 5.5 11 5.5c2.8 0 5.5 1.3 7 3.4C19.5 6.8 22.2 5.5 25 5.5c5 0 9 3.9 9 9 0 5.8-5.2 10.5-14.5 19.1L18 35z"/>
+                    <path class="contour" fill-rule="evenodd" d="M18 35l-1.5-1.4C7.2 25 2 20.3 2 14.5 2 9.4 6 5.5 11 5.5c2.8 0 5.5 1.3 7 3.4C19.5 6.8 22.2 5.5 25 5.5c5 0 9 3.9 9 9 0 5.8-5.2 10.5-14.5 19.1L18 35zM18 10.9C16.5 8.4 13.9 7 11 7 6.9 7 4 9.9 4 14.5c0 5 4.9 9.4 13.5 17.6L18 33l.5-.9C27.1 23.9 32 19.5 32 14.5 32 9.9 29.1 7 25 7c-2.9 0-5.5 1.4-7 3.9z"/>
+                  </g>
+                </svg>
+              </button>
+              <button class="button card__like-button" type="button" aria-label="Нравится">
+                <span class="button__text">Like</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card">
+          <h2 class="card__title">Git: история без потерь</h2>
+          <div class="card__image-wrapper">
+            <span class="card__label">GIT</span>
+            <img
+              class="card__image card__image--filter-4"
+              src="./images/image4.svg"
+              alt="Четвёртая карточка — Git"
+            />
+          </div>
+          <div class="card__content">
+            <p class="card__text">
+              Git — это машина времени для кода. Коммит, ветка, мёрж — теперь работа в команде не страшна, и каждое изменение задокументировано.
+            </p>
+            <p class="card__text">
+              Главное правило: делай коммиты чаще, чем думаешь, что нужно.
+            </p>
+            <div class="card__buttons">
+              <button class="card__icon-button" type="button" aria-label="Лайк">
+                <svg class="like-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none">
+                  <g class="sparks">
+                    <path d="M18 4l1 -3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M26 7l2 -2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M30 16l3 -1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M10 7l-2 -2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M6 16l-3 -1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </g>
+                  <g class="heart">
+                    <path class="core" d="M18 35l-1.5-1.4C7.2 25 2 20.3 2 14.5 2 9.4 6 5.5 11 5.5c2.8 0 5.5 1.3 7 3.4C19.5 6.8 22.2 5.5 25 5.5c5 0 9 3.9 9 9 0 5.8-5.2 10.5-14.5 19.1L18 35z"/>
+                    <path class="main-body" d="M18 35l-1.5-1.4C7.2 25 2 20.3 2 14.5 2 9.4 6 5.5 11 5.5c2.8 0 5.5 1.3 7 3.4C19.5 6.8 22.2 5.5 25 5.5c5 0 9 3.9 9 9 0 5.8-5.2 10.5-14.5 19.1L18 35z"/>
+                    <path class="contour" fill-rule="evenodd" d="M18 35l-1.5-1.4C7.2 25 2 20.3 2 14.5 2 9.4 6 5.5 11 5.5c2.8 0 5.5 1.3 7 3.4C19.5 6.8 22.2 5.5 25 5.5c5 0 9 3.9 9 9 0 5.8-5.2 10.5-14.5 19.1L18 35zM18 10.9C16.5 8.4 13.9 7 11 7 6.9 7 4 9.9 4 14.5c0 5 4.9 9.4 13.5 17.6L18 33l.5-.9C27.1 23.9 32 19.5 32 14.5 32 9.9 29.1 7 25 7c-2.9 0-5.5 1.4-7 3.9z"/>
+                  </g>
+                </svg>
+              </button>
+              <button class="button card__like-button" type="button" aria-label="Нравится">
+                <span class="button__text">Like</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="card">
+          <h2 class="card__title">Адаптивность: один сайт для всех</h2>
+          <div class="card__image-wrapper">
+            <span class="card__label">MEDIA</span>
+            <img
+              class="card__image card__image--filter-5"
+              src="./images/image5.svg"
+              alt="Пятая карточка — адаптивность"
+            />
+          </div>
+          <div class="card__content">
+            <p class="card__text">
+              Mobile first — не просто слова. Когда сайт красиво выглядит на телефоне, планшете и десктопе одновременно, это настоящая победа.
+            </p>
+            <p class="card__text">
+              Медиазапросы и clamp() стали лучшими друзьями.
+            </p>
+            <div class="card__buttons">
+              <button class="card__icon-button" type="button" aria-label="Лайк">
+                <svg class="like-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none">
+                  <g class="sparks">
+                    <path d="M18 4l1 -3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M26 7l2 -2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M30 16l3 -1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M10 7l-2 -2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M6 16l-3 -1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </g>
+                  <g class="heart">
+                    <path class="core" d="M18 35l-1.5-1.4C7.2 25 2 20.3 2 14.5 2 9.4 6 5.5 11 5.5c2.8 0 5.5 1.3 7 3.4C19.5 6.8 22.2 5.5 25 5.5c5 0 9 3.9 9 9 0 5.8-5.2 10.5-14.5 19.1L18 35z"/>
+                    <path class="main-body" d="M18 35l-1.5-1.4C7.2 25 2 20.3 2 14.5 2 9.4 6 5.5 11 5.5c2.8 0 5.5 1.3 7 3.4C19.5 6.8 22.2 5.5 25 5.5c5 0 9 3.9 9 9 0 5.8-5.2 10.5-14.5 19.1L18 35z"/>
+                    <path class="contour" fill-rule="evenodd" d="M18 35l-1.5-1.4C7.2 25 2 20.3 2 14.5 2 9.4 6 5.5 11 5.5c2.8 0 5.5 1.3 7 3.4C19.5 6.8 22.2 5.5 25 5.5c5 0 9 3.9 9 9 0 5.8-5.2 10.5-14.5 19.1L18 35zM18 10.9C16.5 8.4 13.9 7 11 7 6.9 7 4 9.9 4 14.5c0 5 4.9 9.4 13.5 17.6L18 33l.5-.9C27.1 23.9 32 19.5 32 14.5 32 9.9 29.1 7 25 7c-2.9 0-5.5 1.4-7 3.9z"/>
+                  </g>
+                </svg>
+              </button>
+              <button class="button card__like-button" type="button" aria-label="Нравится">
+                <span class="button__text">Like</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="card">
+          <h2 class="card__title">Доступность: вёрстка для всех людей</h2>
+          <div class="card__image-wrapper">
+            <span class="card__label">A11Y</span>
+            <img
+              class="card__image card__image--filter-6"
+              src="./images/image6.svg"
+              alt="Шестая карточка — доступность"
+            />
+          </div>
+          <div class="card__content">
+            <p class="card__text">
+              Семантика, alt-тексты, aria-метки — это не лишние детали, а забота о пользователях. Хорошая вёрстка должна работать для всех.
+            </p>
+            <p class="card__text">
+              Скринридер — лучший тест на правильную структуру страницы.
+            </p>
+            <div class="card__buttons">
+              <button class="card__icon-button" type="button" aria-label="Лайк">
+                <svg class="like-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none">
+                  <g class="sparks">
+                    <path d="M18 4l1 -3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M26 7l2 -2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M30 16l3 -1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M10 7l-2 -2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M6 16l-3 -1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </g>
+                  <g class="heart">
+                    <path class="core" d="M18 35l-1.5-1.4C7.2 25 2 20.3 2 14.5 2 9.4 6 5.5 11 5.5c2.8 0 5.5 1.3 7 3.4C19.5 6.8 22.2 5.5 25 5.5c5 0 9 3.9 9 9 0 5.8-5.2 10.5-14.5 19.1L18 35z"/>
+                    <path class="main-body" d="M18 35l-1.5-1.4C7.2 25 2 20.3 2 14.5 2 9.4 6 5.5 11 5.5c2.8 0 5.5 1.3 7 3.4C19.5 6.8 22.2 5.5 25 5.5c5 0 9 3.9 9 9 0 5.8-5.2 10.5-14.5 19.1L18 35z"/>
+                    <path class="contour" fill-rule="evenodd" d="M18 35l-1.5-1.4C7.2 25 2 20.3 2 14.5 2 9.4 6 5.5 11 5.5c2.8 0 5.5 1.3 7 3.4C19.5 6.8 22.2 5.5 25 5.5c5 0 9 3.9 9 9 0 5.8-5.2 10.5-14.5 19.1L18 35zM18 10.9C16.5 8.4 13.9 7 11 7 6.9 7 4 9.9 4 14.5c0 5 4.9 9.4 13.5 17.6L18 33l.5-.9C27.1 23.9 32 19.5 32 14.5 32 9.9 29.1 7 25 7c-2.9 0-5.5 1.4-7 3.9z"/>
+                  </g>
+                </svg>
+              </button>
+              <button class="button card__like-button" type="button" aria-label="Нравится">
+                <span class="button__text">Like</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 7 -->
+        <article class="card">
+          <h2 class="card__title">SVG и анимации: движение в вёрстке</h2>
+          <div class="card__image-wrapper">
+            <span class="card__label">SVG</span>
+            <img
+              class="card__image card__image--filter-7"
+              src="./images/image7.svg"
+              alt="Седьмая карточка — SVG"
+            />
+          </div>
+          <div class="card__content">
+            <p class="card__text">
+              SVG-графика, CSS-анимации, keyframes — страница перестала быть статичной. Теперь элементы живут, двигаются и реагируют на пользователя.
+            </p>
+            <p class="card__text">
+              Иконка-сердце с анимацией лайка — маленький шедевр этого проекта.
+            </p>
+            <div class="card__buttons">
+              <button class="card__icon-button" type="button" aria-label="Лайк">
+                <svg class="like-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none">
+                  <g class="sparks">
+                    <path d="M18 4l1 -3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M26 7l2 -2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M30 16l3 -1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M10 7l-2 -2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M6 16l-3 -1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </g>
+                  <g class="heart">
+                    <path class="core" d="M18 35l-1.5-1.4C7.2 25 2 20.3 2 14.5 2 9.4 6 5.5 11 5.5c2.8 0 5.5 1.3 7 3.4C19.5 6.8 22.2 5.5 25 5.5c5 0 9 3.9 9 9 0 5.8-5.2 10.5-14.5 19.1L18 35z"/>
+                    <path class="main-body" d="M18 35l-1.5-1.4C7.2 25 2 20.3 2 14.5 2 9.4 6 5.5 11 5.5c2.8 0 5.5 1.3 7 3.4C19.5 6.8 22.2 5.5 25 5.5c5 0 9 3.9 9 9 0 5.8-5.2 10.5-14.5 19.1L18 35z"/>
+                    <path class="contour" fill-rule="evenodd" d="M18 35l-1.5-1.4C7.2 25 2 20.3 2 14.5 2 9.4 6 5.5 11 5.5c2.8 0 5.5 1.3 7 3.4C19.5 6.8 22.2 5.5 25 5.5c5 0 9 3.9 9 9 0 5.8-5.2 10.5-14.5 19.1L18 35zM18 10.9C16.5 8.4 13.9 7 11 7 6.9 7 4 9.9 4 14.5c0 5 4.9 9.4 13.5 17.6L18 33l.5-.9C27.1 23.9 32 19.5 32 14.5 32 9.9 29.1 7 25 7c-2.9 0-5.5 1.4-7 3.9z"/>
+                  </g>
+                </svg>
+              </button>
+              <button class="button card__like-button" type="button" aria-label="Нравится">
+                <span class="button__text">Like</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 8 -->
+        <article class="card">
+          <h2 class="card__title">Финал: закрывающий тег пути</h2>
+          <div class="card__image-wrapper">
+            <span class="card__label">THE END</span>
+            <img
+              class="card__image card__image--filter-8"
+              src="./images/image8.svg"
+              alt="Восьмая карточка — финал"
+            />
+          </div>
+          <div class="card__content">
+            <p class="card__text">
+              Этот проект — итог большого пути. Каждый освоенный инструмент нашёл своё место: семантика, стили, скрипты, шрифты, анимации.
+            </p>
+            <p class="card__text">
+              Закрывающий тег — не конец, а начало. Теперь впереди настоящие проекты и реальная работа. &lt;/учёба&gt;
+            </p>
+            <div class="card__buttons">
+              <button class="card__icon-button" type="button" aria-label="Лайк">
+                <svg class="like-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none">
+                  <g class="sparks">
+                    <path d="M18 4l1 -3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M26 7l2 -2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M30 16l3 -1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M10 7l-2 -2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M6 16l-3 -1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </g>
+                  <g class="heart">
+                    <path class="core" d="M18 35l-1.5-1.4C7.2 25 2 20.3 2 14.5 2 9.4 6 5.5 11 5.5c2.8 0 5.5 1.3 7 3.4C19.5 6.8 22.2 5.5 25 5.5c5 0 9 3.9 9 9 0 5.8-5.2 10.5-14.5 19.1L18 35z"/>
+                    <path class="main-body" d="M18 35l-1.5-1.4C7.2 25 2 20.3 2 14.5 2 9.4 6 5.5 11 5.5c2.8 0 5.5 1.3 7 3.4C19.5 6.8 22.2 5.5 25 5.5c5 0 9 3.9 9 9 0 5.8-5.2 10.5-14.5 19.1L18 35z"/>
+                    <path class="contour" fill-rule="evenodd" d="M18 35l-1.5-1.4C7.2 25 2 20.3 2 14.5 2 9.4 6 5.5 11 5.5c2.8 0 5.5 1.3 7 3.4C19.5 6.8 22.2 5.5 25 5.5c5 0 9 3.9 9 9 0 5.8-5.2 10.5-14.5 19.1L18 35zM18 10.9C16.5 8.4 13.9 7 11 7 6.9 7 4 9.9 4 14.5c0 5 4.9 9.4 13.5 17.6L18 33l.5-.9C27.1 23.9 32 19.5 32 14.5 32 9.9 29.1 7 25 7c-2.9 0-5.5 1.4-7 3.9z"/>
+                  </g>
+                </svg>
+              </button>
+              <button class="button card__like-button" type="button" aria-label="Нравится">
+                <span class="button__text">Like</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </section>
+    </main>
+
+  <footer class="footer">
+    <button class="button footer__save-button" type="button">
+      <svg class="floppy-icon" aria-hidden="true" width="28" height="28">
+        <use href="#icon-floppy"></use>
+      </svg>
+      <span class="button__text">Сохранить на память</span>
+    </button>
+  </footer>
+
+  <dialog class="dialog" aria-label="Сохранение воспоминаний" aria-describedby="dialog-description">
+    <div class="dialog__content">
+      <svg class="dialog__floppy" aria-hidden="true" width="39" height="39">
+        <use href="#icon-floppy"></use>
+      </svg>
+      <p class="dialog__text" id="dialog-description">Эта страница сохранит ваши воспоминания и передаст их в такой же непростой момент</p>
+    </div>
+    <form class="dialog__form" method="dialog">
+      <button class="button dialog__button" type="submit">
+        <span class="button__text">ОК</span>
+      </button>
+    </form>
+  </dialog>
+
+  <script src="./scripts/like.js"></script>
+</body>
 </html>

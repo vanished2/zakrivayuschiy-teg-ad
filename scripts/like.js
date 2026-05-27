@@ -1,41 +1,90 @@
-/* этот скрипт использует такие имена классов:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-Если эти классы поменять в HTML, скрипт перестанет работать. Будьте аккуратны.
-*/
+document.addEventListener('DOMContentLoaded', function() {
+  const page = document.querySelector('.page');
+  const themeButtons = document.querySelectorAll('.theme-menu__button');
+  const cardButtonGroups = document.querySelectorAll('.card__buttons');
+  const footerSaveButton = document.querySelector('.footer__save-button');
+  const dialog = document.querySelector('.dialog');
+  const dialogForm = document.querySelector('.dialog__form');
+  const dialogCloseButton = document.querySelector('.dialog__button');
 
-const likeHeartArray = document.querySelectorAll('.like-icon');
-const likeButtonArray = document.querySelectorAll('.card__like-button');
-const iconButtonArray = document.querySelectorAll('.card__icon-button');
+  const setTheme = function(theme) {
+    if (!page) {
+      return;
+    }
 
-iconButtonArray.forEach((iconButton, index) => {
-  iconButton.onclick = () =>
-    toggleIsLiked(likeHeartArray[index], likeButtonArray[index]);
-});
+    page.classList.remove('theme-light', 'theme-dark', 'theme-auto');
+    page.classList.add('theme-' + theme);
 
-likeButtonArray.forEach((button, index) => {
-  button.onclick = () => toggleIsLiked(likeHeartArray[index], button);
-});
+    themeButtons.forEach(function(button) {
+      const buttonTheme = button.textContent.trim().toLowerCase();
+      const isActive = buttonTheme === theme;
+      button.disabled = isActive;
+      button.setAttribute('aria-pressed', String(isActive));
+    });
+  };
 
-function toggleIsLiked(heart, button) {
-  heart.classList.toggle('is-liked');
-  setButtonText(heart, button);
-}
+  themeButtons.forEach(function(button) {
+    button.addEventListener('click', function(event) {
+      event.preventDefault();
+      setTheme(button.textContent.trim().toLowerCase());
+    });
+  });
 
-function setButtonText(heart, button) {
-  if ([...heart.classList].includes('is-liked')) {
-    setTimeout(
-      () => (button.querySelector('.button__text').textContent = 'Unlike'),
-      500
-    );
-  } else {
-    setTimeout(
-      () => (button.querySelector('.button__text').textContent = 'Like'),
-      500
-    );
+  const activeThemeButton = Array.from(themeButtons).find(function(button) {
+    return button.disabled;
+  });
+
+  if (activeThemeButton) {
+    setTheme(activeThemeButton.textContent.trim().toLowerCase());
   }
-}
+
+  cardButtonGroups.forEach(function(buttons) {
+    const iconButton = buttons.querySelector('.card__icon-button');
+    const likeButton = buttons.querySelector('.card__like-button');
+    const icon = buttons.querySelector('.like-icon');
+
+    const toggleLike = function(event) {
+      event.preventDefault();
+
+      if (icon) {
+        icon.classList.toggle('is-liked');
+      }
+    };
+
+    if (iconButton) {
+      iconButton.addEventListener('click', toggleLike);
+    }
+
+    if (likeButton) {
+      likeButton.addEventListener('click', toggleLike);
+    }
+  });
+
+  if (dialog) {
+    const openDialog = function(event) {
+      event.preventDefault();
+
+      if (!dialog.open) {
+        dialog.showModal();
+      }
+    };
+
+    if (footerSaveButton) {
+      footerSaveButton.addEventListener('click', openDialog);
+    }
+
+    if (dialogCloseButton) {
+      dialogCloseButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        dialog.close();
+      });
+    }
+
+    if (dialogForm) {
+      dialogForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        dialog.close();
+      });
+    }
+  }
+});
